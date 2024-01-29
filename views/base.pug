@@ -1,0 +1,42 @@
+doctype html
+html 
+    head 
+        block head 
+            meta(charset='UTF-8')
+            meta(name= 'viewport' content ='width=device-width, initial-scale=1.0')
+            //- meta(http-equiv='Content-Security-Policy', content='default-src \'self\'; script-src \'self\' https://cdnjs.cloudflare.com; connect-src \'self\' ws://localhost:57362')
+            //- meta(http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src http://localhost:65174 ws://localhost:65174 http://localhost:3000;")
+            //- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src http://localhost:65174 ws://localhost:65174 http://localhost:3000 http://localhost https://js.stripe.com">
+            //- meta(http-equiv='Content-Security-Policy', content="default-src 'self'; connect-src http://localhost:65174 ws://localhost:65174 http://localhost:3000 https://js.stripe.com")
+            //- meta(http-equiv='Content-Security-Policy', content="default-src 'self' https://js.stripe.com; connect-src http://localhost:65174 ws://localhost:65174 http://localhost:3000 https://js.stripe.com")
+            //- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; frame-src 'self' https://js.stripe.com; connect-src http://localhost:65174 ws://localhost:65174 http://localhost:3000 https://js.stripe.com">
+            <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://js.stripe.com; frame-src 'self' https://js.stripe.com; connect-src http://localhost:65174 ws://localhost:65174 http://localhost:3000 https://js.stripe.com">
+
+             
+
+            link(rel='stylesheet' href='/css/styles.css')
+    
+            link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Lato:300,300i,700')
+
+            link(rel='shortcut icon' type='images/png' href='/img/favicon.png')
+            title Natours | #{title}
+
+
+    body 
+        //- HEADER
+        include _header
+
+        //- CONTENT 
+        block content 
+            h1 This is a placeholder heading
+        
+        //- Footer 
+        include _footer
+
+
+        script(src="https://js.stripe.com/v3/")
+        script(src='/js/bundle.js')
+        
+
+
+         
